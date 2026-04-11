@@ -25,4 +25,9 @@ cursor.execute("INSERT INTO data (user,user_global_name,user_id,info_submitted) 
 connect.commit()
 cursor.execute("SELECT * FROM data")
 print(cursor.fetchall())#...don't need to explain
+"""THIS IS THE UPDATING METHOD"""
+cursor.execute("UPDATE data SET info_submitted=? WHERE user=?",["I am a bot dev","Akira"])
+connect.commit()
+print(cursor.fetchall())
+"""IT worked, just use datashow.py and then wherever, the user will be Akira, it will change the info submitted, make sure there is a Akira in user"""
 connect.close()
